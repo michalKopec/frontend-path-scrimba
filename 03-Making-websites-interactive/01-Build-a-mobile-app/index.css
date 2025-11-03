@@ -10,6 +10,8 @@ body {
 label {
     color: #5f9341;
     font-weight: 900;
+    display: block;
+    margin-bottom: 10px;
 }
 
 input {
@@ -17,7 +19,7 @@ input {
     padding: 10px;
     box-sizing: border-box;  /* Includes padding in width calculation */
     border: 1px solid #5f9341;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
 }
 
 /* ===== BUTTONS ===== */
