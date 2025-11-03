@@ -1,13 +1,33 @@
 <html>
     <head>
+        <title>Leads Tracker</title>
+        
+        <!-- Makes app responsive on mobile devices - without this, mobile browsers zoom out -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Icons for when user adds app to iPhone home screen -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        
+        <!-- Web app manifest - enables "Add to Home Screen" and makes it behave like native app -->
+        <link rel="manifest" href="/site.webmanifest">
+        
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <input type="text" id="input-el">
+        <label>Enter URL:</label>
+        <input type="text" id="input-el" placeholder="https://scrimba.com">
         <button id="input-btn">SAVE INPUT</button>
+        
+        <!-- Double-click required to delete - prevents accidents -->
         <button id="delete-btn">DELETE ALL</button>
+        
+        <!-- List gets populated dynamically by JavaScript -->
         <ul id="ul-el">
         </ul>
+        
+        <!-- type="module" allows ES6 imports in the JavaScript file -->
         <script type="module" src="index.js"></script>
     </body>
 </html>
