@@ -20,6 +20,7 @@ input {
     box-sizing: border-box;  /* Includes padding in width calculation */
     border: 1px solid #5f9341;
     margin-bottom: 10px;
+    font-size: 1.2rem;
 }
 
 /* ===== BUTTONS ===== */
