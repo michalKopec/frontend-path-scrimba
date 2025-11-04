@@ -2,6 +2,12 @@
 
 Build a responsive science news layout using CSS Grid that demonstrates two-dimensional layout control, moving from a single-column mobile design to complex multi-column layouts on larger screens without requiring excessive wrapper elements.
 
+# 🙌 Demo
+https://scrimba-responsive-layout-css-grid.netlify.app/
+
+<img width="1096" height="705" alt="image" src="https://github.com/user-attachments/assets/f83b409b-7dfe-4f2f-b10f-ad9b64db3c90" />
+
+
 # 📚 Learning Objectives 
 
 ✅ Understand CSS Grid as a two-dimensional layout system (rows + columns)
