@@ -1,0 +1,172 @@
+/* =================
+   CSS Reset & Base Styles
+   ================= */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', sans-serif;
+}
+
+/* Page-level Grid - creates margins and layout structure */
+body {
+  display: grid;
+  /* 1em margins on left/right, main content in center */
+  grid-template-columns: 1em 1fr 1em;
+  grid-template-areas: 
+    ".... head ...."
+    ".... main ...."
+    ".... foot ....";
+  gap: 1em;
+}
+
+.site-header {
+  grid-area: head;
+}
+
+footer {
+  grid-area: foot;
+}
+
+/* =================
+   Main Element Layout 
+   ================= */
+
+main {
+  grid-area: main;
+  display: grid;
+  gap: 1em;
+  /* Mobile-first: single column layout */
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "tech"
+    "envi"
+    "nasa"
+    "phys"
+    "heal";     
+}
+
+/* Tablet: 2-column layout with NASA spanning 2 rows */
+@media(min-width: 500px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      "tech tech"
+      "envi nasa"
+      "phys nasa"
+      "heal heal"
+  } 
+}
+
+/* Desktop: complex 12-column layout */
+@media(min-width: 870px){
+  main {
+    /* Using minmax() for last 3 columns ensures they don't get too narrow */
+    grid-template-columns: repeat(9, 1fr) repeat(3, minmax(70px, 1fr));
+    grid-template-areas: 
+      "tech tech tech tech tech tech envi envi envi nasa nasa nasa"
+      "phys phys phys heal heal heal heal heal heal nasa nasa nasa"
+  }
+}
+
+/* Grid area assignments - maps each article to its named area */
+.technology {
+  grid-area: tech;
+}
+
+.environment {
+  grid-area: envi;
+}
+
+.nasa {
+  grid-area: nasa;
+}
+
+.physics { 
+  grid-area: phys;
+}
+
+.health {
+  grid-area: heal;
+}
+
+/* =================
+   Article Card 
+   ================= */
+
+/* Visual feedback on hover/focus */
+a:hover, a:focus {
+  filter: brightness(0.9);
+}
+
+/* Keyboard navigation indicator */
+a:focus {
+  outline: 3px solid #5a5a5a;
+  box-shadow: 0 0 0 3px rgba(135,18,113,0.5); 
+  transition: outline 0.2s ease, box-shadow 0.2s ease;
+}
+
+article {
+  border-radius: 0.2em;
+  background-color: #e5e5e5;
+  /* Ensures card fills grid cell completely */
+  height: 100%;
+}
+
+.article-header {
+  box-sizing: border-box;
+  padding: 1em;
+  width: 100%;
+}
+
+/* =================
+   Typography 
+   ================= */
+
+h1 {
+  color: #0F0F0F; 
+  letter-spacing: 0.04em;
+  font-family: "Source Code Pro", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default link styling */
+a {
+  text-decoration: none;
+}
+
+/* Category labels (Technology, Environment, etc.) */
+h2 {
+  font-size: 0.88rem;
+  color: #5D0E50;
+  margin: 0;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+}
+
+/* Article headlines */
+h3 {
+  font-size: 1rem;
+  margin: .4em 0;
+  letter-spacing: 0.03em;
+  color: #111111;
+  font-weight: 500;
+}
+
+p {
+  margin: 0;
+  font-size: .85rem;
+  color: #7c7c7c;
+}
+
+/* =================
+   Images 
+   ================= */
+
+img {
+  width: 100%;
+  /* Rounds top corners to match card border-radius */
+  border-top-left-radius: .2em;
+  border-top-right-radius: .2em;
+}
