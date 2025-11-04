@@ -14,10 +14,12 @@ body {
   /* 1em margins on left/right, main content in center */
   grid-template-columns: 1em 1fr 1em;
   grid-template-areas: 
+    ".... .... ...."
     ".... head ...."
     ".... main ...."
     ".... foot ....";
-  gap: 1em;
+    ".... .... ...."
+  gap: 1em 0;
 }
 
 .site-header {
